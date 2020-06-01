@@ -5,10 +5,22 @@ using UnityEngine.UI;
 
 public class ToggleCanvas : MonoBehaviour
 {
-    public GameObject current, toActivate;
+    public GameObject toActivate;
+
+
     public void Toggle()
     {
         toActivate.SetActive(true);
-        current.SetActive(false);
+        //current.SetActive(false);
+
+        StartCoroutine(uiOff());
+    }
+
+    private IEnumerator uiOff ()
+    {
+        yield return new WaitForSeconds(4);
+        toActivate.SetActive(false);
+        //current.SetActive(true);
+        
     }
 }
