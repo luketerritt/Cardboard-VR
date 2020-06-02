@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public float currentTime = 0f;
     public float startingTime= 10f; 
 
+    //time =0, game ends
+
 
 
     private void Start()
