@@ -23,9 +23,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 0;
         currentTime = startingTime; 
 
     }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+    }
+
     void Update()
     {
        // displayProperties();

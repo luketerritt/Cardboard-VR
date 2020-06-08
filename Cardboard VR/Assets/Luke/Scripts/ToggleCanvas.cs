@@ -8,19 +8,18 @@ public class ToggleCanvas : MonoBehaviour
     public GameObject toActivate;
 
 
-    public void Toggle()
+    public void TogglePhone()
     {
         toActivate.SetActive(true);
         //current.SetActive(false);
 
-        StartCoroutine(uiOff());
+        StartCoroutine(uiPhoneOff());
     }
 
-    private IEnumerator uiOff ()
+    private IEnumerator uiPhoneOff ()
     {
         yield return new WaitForSeconds(4);
         toActivate.SetActive(false);
-        //current.SetActive(true);
-        
+        //current.SetActive(true);       
     }
 }
