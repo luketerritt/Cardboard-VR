@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.UI; 
 
 public class GameManager : MonoBehaviour
 {
@@ -12,10 +11,10 @@ public class GameManager : MonoBehaviour
     //public Text playerAmmo = null;
 
     public Text timeTime = null;
-    
+
     //Time count down
     public float currentTime = 0f;
-    public float startingTime= 10f; 
+    public float startingTime = 10f;
 
     //time =0, game ends
 
@@ -23,19 +22,19 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 0;
-        currentTime = startingTime; 
+       // Time.timeScale = 0;
+        currentTime = startingTime;
 
     }
 
-    public void StartGame()
-    {
-        Time.timeScale = 1;
-    }
+    //public void StartGame()
+    //{
+    //    Time.timeScale = 1;
+    //}
 
     void Update()
     {
-       // displayProperties();
+        // displayProperties();
         counter();
         //restartgame();
     }
@@ -54,12 +53,12 @@ public class GameManager : MonoBehaviour
 
     void counter()
     {
-        currentTime -= 1 *Time.deltaTime;
-        timeTime.text = currentTime.ToString("00:00");    
-        
-        if(currentTime <= 0)
+        currentTime -= 1 * Time.deltaTime;
+        timeTime.text = currentTime.ToString("00:00");
+
+        if (currentTime <= 0)
         {
-            currentTime = 0; 
+            currentTime = 0;
         }
     }
 
@@ -73,5 +72,4 @@ public class GameManager : MonoBehaviour
     //}
 
 }
-
 

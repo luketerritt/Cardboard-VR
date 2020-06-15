@@ -6,7 +6,7 @@ public class DepositBox : MonoBehaviour
 {
     //correct box opens
     public bool correctBox= true;
-    public int keyRecieved = 0;
+    
 
     //key is activated
     public GameObject key;

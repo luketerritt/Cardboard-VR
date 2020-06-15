@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ToggleCanvas : MonoBehaviour
 {
     public GameObject toActivate;
+   
 
 
     public void TogglePhone()
@@ -18,8 +19,9 @@ public class ToggleCanvas : MonoBehaviour
 
     private IEnumerator uiPhoneOff ()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         toActivate.SetActive(false);
         //current.SetActive(true);       
     }
+
 }
