@@ -19,20 +19,16 @@ public class circuitBoard2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //if(totalVoltage == voltageSuccess)
-        // {
-        //     Debug.Log("Laser disabled"); 
-        // }
         Debug.Log(totalVoltage);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "fuse")
         {
-            Debug.Log("enetered");
-            securityAlarmSuccess += other.gameObject.GetComponent<Fuse>().voltage;
+            Debug.Log("entered");
+            totalVoltage += other.gameObject.GetComponent<Fuse>().voltage;
             securityAmountUI.text = totalVoltage.ToString();
         }
     }
@@ -41,7 +37,7 @@ public class circuitBoard2 : MonoBehaviour
     {
         if (other.tag == "fuse")
         {
-            securityAlarmSuccess -= other.gameObject.GetComponent<Fuse>().voltage;
+            totalVoltage -= other.gameObject.GetComponent<Fuse>().voltage;
             securityAmountUI.text = totalVoltage.ToString();
         }
     }

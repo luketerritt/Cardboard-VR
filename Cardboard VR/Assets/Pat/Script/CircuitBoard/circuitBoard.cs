@@ -6,32 +6,47 @@ using UnityEngine.UI;
 public class circuitBoard : MonoBehaviour
 {
     public int voltageSuccess = 130; 
-
     public int totalVoltage=0;
+    public Text voltageAmount;
 
-    public Text voltageAmount; 
+    public GameObject lasers;
+    public GameObject nextLocation;
 
-    void Start()
-    {
-        
-    }
+    public GameObject player;
+
+
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log(totalVoltage);
+        Success();
+    }
+
+    void Success()
+    {
         if (totalVoltage == voltageSuccess && circuitBoard2.totalVoltage == circuitBoard2.securityAlarmSuccess)
         {
-            Debug.Log("Laser disabled");
+            Debug.Log("deactivate laser");
+            StartCoroutine(lasersDeactivated());
         }
-       
     }
+
+    private IEnumerator lasersDeactivated()
+    {
+        yield return new WaitForSeconds(2);
+        lasers.SetActive(false);
+        yield return new WaitForSeconds(4);
+        player.transform.position = nextLocation.transform.localPosition; 
+
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "fuse")
         {
-            Debug.Log("enetered"); 
+            //Debug.Log("enetered"); 
             totalVoltage += other.gameObject.GetComponent<Fuse>().voltage;
             voltageAmount.text = totalVoltage.ToString(); 
         }
