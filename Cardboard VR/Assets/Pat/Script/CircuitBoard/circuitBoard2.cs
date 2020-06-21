@@ -19,7 +19,7 @@ public class circuitBoard2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(totalVoltage);
+        //Debug.Log(totalVoltage);
 
     }
 
@@ -27,7 +27,7 @@ public class circuitBoard2 : MonoBehaviour
     {
         if (other.tag == "fuse")
         {
-            Debug.Log("entered");
+            //Debug.Log("entered");
             totalVoltage += other.gameObject.GetComponent<Fuse>().voltage;
             securityAmountUI.text = totalVoltage.ToString();
         }

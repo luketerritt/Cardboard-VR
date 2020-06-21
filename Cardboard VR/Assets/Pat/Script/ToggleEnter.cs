@@ -15,5 +15,6 @@ public class ToggleEnter : MonoBehaviour
             batteryInPlace.SetActive(true); 
             Lighttrigger.SetActive(true);
         }
+
     }
 }

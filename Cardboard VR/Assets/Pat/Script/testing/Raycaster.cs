@@ -11,32 +11,23 @@ public class Raycaster : MonoBehaviour
 
     private Ray ray;
     private RaycastHit hit;
-    public int maxDistance; 
-
+    public int maxDistance;
 
 
 
     bool inHands = false;
 
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
-    void Update()
+   public void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.53f, 0));
+            //ray = cam.ScreenPointToRay(Input.mousePosition + new Vector3(0, 0, 0));
 
-            ray = cam.ScreenPointToRay(Input.mousePosition + new Vector3(0,50,0));
-
-            //if(Physics.Raycast(ray))
-            //{
-            //    Debug.Log("Hit Object"); 
-            //}
-
-            if (Physics.Raycast(ray, out hit,maxDistance))
+            if (Physics.Raycast(ray, out hit, maxDistance))
             {
                 if (!inHands)
                 {
@@ -69,7 +60,7 @@ public class Raycaster : MonoBehaviour
                         fuseInHand.transform.localRotation = Quaternion.identity;
                     }
                 }
-                Debug.DrawLine(ray.origin, hit.point, Color.red);
+                Debug.DrawLine(ray.origin, hit.point, Color.red, 1f);
             }
         }
     }

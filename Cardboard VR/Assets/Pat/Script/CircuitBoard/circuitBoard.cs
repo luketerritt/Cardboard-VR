@@ -19,7 +19,7 @@ public class circuitBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(totalVoltage);
+        //Debug.Log(totalVoltage);
         Success();
     }
 

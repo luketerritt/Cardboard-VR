@@ -606,9 +606,21 @@
       <Project>{F37EB8D3-595B-2A8E-9D57-98253E4F534B}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Formats.Fbx.Editor.csproj">
+      <Project>{C9EDA4F7-6620-78FF-17BE-1A5690E8DFC0}</Project>
+      <Name>Unity.Formats.Fbx.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{D1CEA0D9-4112-82EC-B66C-96C89B7097FF}</Project>
+      <Name>Unity.Recorder.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{3A848AB7-9891-EDDA-D555-BF184C2F81F4}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.csproj">
+      <Project>{813B4C0B-1013-5DC6-9B3F-6587BB44C209}</Project>
+      <Name>Unity.Recorder</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{6940CB9D-2F64-7CD4-BA0F-5610D5AB47B0}</Project>
@@ -622,9 +634,17 @@
       <Project>{C540080A-BED7-978E-DDFC-EE09E5DBB722}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Autodesk.Fbx.csproj">
+      <Project>{9FB2437C-981E-177E-C3B0-30060A286C23}</Project>
+      <Name>Autodesk.Fbx</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{07A21C90-D344-AE1A-8456-9910C203B41A}</Project>
       <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Formats.Fbx.Runtime.csproj">
+      <Project>{666DF93D-D56A-1DFF-7210-722E1C5741EE}</Project>
+      <Name>Unity.Formats.Fbx.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -763,12 +783,15 @@
     <Compile Include="Assets\Pat\Script\Fuse.cs" />
     <Compile Include="Assets\Pat\Script\GameManager.cs" />
     <Compile Include="Assets\Pat\Script\Lamp.cs" />
+    <Compile Include="Assets\Pat\Script\QuickLight.cs" />
     <Compile Include="Assets\Pat\Script\StartGame.cs" />
+    <Compile Include="Assets\Pat\Script\ToggleEnter.cs" />
     <Compile Include="Assets\Pat\Script\combinationCode.cs" />
     <Compile Include="Assets\Pat\Script\grabBattery.cs" />
     <Compile Include="Assets\Pat\Script\grabFuse.cs" />
     <Compile Include="Assets\Pat\Script\keyhole.cs" />
     <Compile Include="Assets\Pat\Script\testing\LaserSwitch.cs" />
+    <Compile Include="Assets\Pat\Script\testing\Raycaster.cs" />
     <Compile Include="Assets\Pat\Script\vaultToggle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -841,6 +864,10 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Packages\com.autodesk.fbx\Runtime\Autodesk.Fbx.asmdef" />
+    <None Include="Packages\com.autodesk.fbx\Tests\Editor\PlayModeTests\PlayModeTests.asmdef" />
+    <None Include="Packages\com.autodesk.fbx\Tests\Editor\UnitTests\FbxUnitTests.asmdef" />
+    <None Include="Packages\com.autodesk.fbx\Tests\Editor\UseCaseTests\FbxUseCaseTests.asmdef" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryCommon.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryDark.uss" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryLight.uss" />
@@ -848,9 +875,23 @@
     <None Include="Packages\com.unity.collab-proxy\Tests\Editor\Unity.CollabProxy.EditorTests.asmdef" />
     <None Include="Packages\com.unity.ext.nunit\net35\unity-custom\This is a custom build DONT include.txt" />
     <None Include="Packages\com.unity.ext.nunit\net35\unity-custom\nunit.framework.xml" />
+    <None Include="Packages\com.unity.formats.fbx\Editor\Unity.Formats.Fbx.Editor.asmdef" />
+    <None Include="Packages\com.unity.formats.fbx\Runtime\Unity.Formats.Fbx.Runtime.asmdef" />
     <None Include="Packages\com.unity.google.resonance.audio\Tests\Editor\Unity.XR.GVR.Audio.EditorTests.asmdef" />
     <None Include="Packages\com.unity.ide.rider\Rider\Editor\com.unity.ide.rider.asmdef" />
     <None Include="Packages\com.unity.ide.vscode\Editor\Unity.com.unity.vscode.Editor.asmdef" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Recorders\_Inputs\Camera\Shaders\CameraInputCopy.shader" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Recorders\_Inputs\Camera\Shaders\CopyFB.shader" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Recorders\_Inputs\RenderTextureSampler\Shaders\BS4Accumulate.shader" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Recorders\_Inputs\RenderTextureSampler\Shaders\BS4Normalize.shader" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Recorders\_Inputs\RenderTextureSampler\Shaders\BS4SuperShader.shader" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Resources\Styles\recorder.uss" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Resources\Styles\recorder_darkSkin.uss" />
+    <None Include="Packages\com.unity.recorder\Editor\Sources\Resources\Styles\recorder_lightSkin.uss" />
+    <None Include="Packages\com.unity.recorder\Editor\Unity.Recorder.Editor.asmdef" />
+    <None Include="Packages\com.unity.recorder\Runtime\Unity.Recorder.asmdef" />
+    <None Include="Packages\com.unity.recorder\Tests\Editor\Unity.Recorder.Editor.Tests.asmdef" />
+    <None Include="Packages\com.unity.recorder\Tests\Runtime\Unity.Recorder.Tests.asmdef" />
     <None Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\UnityEditor.TestRunner.asmdef" />
     <None Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\UnityEngine.TestRunner.asmdef" />
     <None Include="Packages\com.unity.textmeshpro\Editor Resources\Shaders\TMP_Properties.cginc" />
